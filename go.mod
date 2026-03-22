@@ -1,3 +1,3 @@
-module github.com/yourname/cli-battery
+module github.com/zoe668668/cli-battery
 
 go 1.21

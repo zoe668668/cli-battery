@@ -1,50 +1,50 @@
 # 🔋 cli-battery
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/yourname/cli-battery)](https://goreportcard.com/report/github.com/yourname/cli-battery)
+[![GitHub release](https://img.shields.io/github/release/zoe668668/cli-battery.svg)](https://github.com/zoe668668/cli-battery/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/yourname/cli-battery.svg?style=social&label=Star)](https://github.com/yourname/cli-battery)
+[![GitHub stars](https://img.shields.io/github/stars/zoe668668/cli-battery.svg?style=social&label=Star)](https://github.com/zoe668668/cli-battery)
+[![Go Report Card](https://goreportcard.com/badge/github.com/zoe668668/cli-battery)](https://goreportcard.com/report/github.com/zoe668668/cli-battery)
 
 > **A beautiful battery health monitor for your terminal** 🔋✨
 
 A lightweight, zero-dependency CLI tool to monitor your laptop battery health, cycle count, temperature, and estimated lifespan with beautiful terminal graphics.
 
-![Demo](docs/demo.gif)
-
 ## ✨ Features
 
-- 📊 **Battery Health Score** - Visual health percentage with color coding
+- 📊 **Battery Health Score** - Visual health percentage with color coding (green/yellow/red)
 - 🔄 **Cycle Count** - Track charge cycles vs. design limit
 - 🌡️ **Temperature Monitor** - Real-time battery temperature
 - ⏱️ **Time Estimates** - Time to full charge / time remaining
-- 📈 **Pretty Charts** - ASCII progress bars and sparklines
+- 📈 **Pretty Charts** - ASCII progress bars
 - 🖥️ **Cross-Platform** - macOS & Linux support
 - ⚡ **Zero Dependencies** - Single binary, no runtime required
-- 🎨 **Color Themes** - Multiple color schemes available
+- 🎨 **Color Themes** - Multiple color schemes (default, neon, dark, minimal)
 
 ## 📦 Installation
 
-### macOS (Homebrew)
+### macOS
 
 ```bash
-brew tap yourname/tap
-brew install cli-battery
+# Apple Silicon (M1/M2/M3)
+curl -sSL https://github.com/zoe668668/cli-battery/releases/latest/download/cli-battery-darwin-arm64 -o cli-battery
+chmod +x cli-battery
+sudo mv cli-battery /usr/local/bin/
 ```
 
 ### Linux
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourname/cli-battery/main/install.sh | bash
+# x86_64
+curl -sSL https://github.com/zoe668668/cli-battery/releases/latest/download/cli-battery-linux-amd64 -o cli-battery
+chmod +x cli-battery
+sudo mv cli-battery /usr/local/bin/
 ```
 
 ### Go Install
 
 ```bash
-go install github.com/yourname/cli-battery@latest
+go install github.com/zoe668668/cli-battery@latest
 ```
-
-### Download Binary
-
-Download the latest release for your platform from [Releases](https://github.com/yourname/cli-battery/releases).
 
 ## 🚀 Quick Start
 
@@ -58,8 +58,8 @@ cli-battery --watch
 # JSON output for scripting
 cli-battery --json
 
-# Show detailed info
-cli-battery --detail
+# Show with neon theme
+cli-battery --theme neon
 ```
 
 ## 📸 Screenshots
@@ -73,7 +73,7 @@ cli-battery --detail
 │  Charge      ████████████████████░░░░░░░░░░  78%        │
 │  Health      ████████████████████████████░░  94%        │
 │  Cycles      ████████░░░░░░░░░░░░░░░░░░░░░░  287 / 1000 │
-│  Temp        32.5°C  ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁                      │
+│  Temp        32.5°C                                      │
 ├─────────────────────────────────────────────────────────┤
 │  ⏱️  Time to Full: 1h 23m                                │
 │  🔌 Status: Charging (USB-C)                             │
@@ -91,7 +91,7 @@ $ cli-battery --watch
 [14:32:25] 🔋 80% | ⚡ Charging | 33°C | ETA: 1h 15m
 ```
 
-## 📊 JSON Output
+### JSON Output
 
 ```bash
 $ cli-battery --json
@@ -101,7 +101,6 @@ $ cli-battery --json
   "cycle_count": 287,
   "max_cycles": 1000,
   "temperature_celsius": 32.5,
-  "time_to_full_minutes": 83,
   "status": "charging",
   "power_source": "USB-C",
   "estimated_life_years": 4.2
@@ -110,18 +109,15 @@ $ cli-battery --json
 
 ## 🎨 Themes
 
+| Theme | Description |
+|-------|-------------|
+| `default` | Standard terminal colors |
+| `neon` | Vibrant neon colors |
+| `dark` | No colors, text only |
+| `minimal` | Clean minimal output |
+
 ```bash
-# Default theme
-cli-battery --theme default
-
-# Dark theme (no colors)
-cli-battery --theme dark
-
-# Neon theme
 cli-battery --theme neon
-
-# Minimal theme
-cli-battery --theme minimal
 ```
 
 ## 🔧 Options
@@ -138,25 +134,14 @@ Options:
   -n, --no-color      Disable colored output
   -v, --version       Show version
   -h, --help          Show help
-
-Examples:
-  cli-battery              Show battery status
-  cli-battery --watch      Watch mode
-  cli-battery --json       JSON output
-  cli-battery --detail     Detailed info
 ```
 
 ## 🛠️ Building from Source
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourname/cli-battery.git
+git clone https://github.com/zoe668668/cli-battery.git
 cd cli-battery
-
-# Build
 go build -o cli-battery .
-
-# Run
 ./cli-battery
 ```
 
@@ -172,7 +157,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -181,4 +166,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-⭐ If this project helped you, please consider giving it a star! ⭐
+⭐ **If this project helped you, please consider giving it a star!** ⭐
