@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cli-battery - Battery Health Monitor for Terminal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #fff; min-height: 100vh; padding: 40px; }
+    .container { max-width: 800px; margin: 0 auto; text-align: center; }
+    h1 { font-size: 3em; margin-bottom: 10px; }
+    .subtitle { color: #8b949e; font-size: 1.2em; margin-bottom: 40px; }
+    .install { background: #161b22; border-radius: 8px; padding: 30px; margin: 30px 0; text-align: left; }
+    code { background: #0d1117; padding: 15px; border-radius: 5px; display: block; color: #7ee787; margin-top: 10px; font-family: Monaco, monospace; }
+    .btn { display: inline-block; background: #238636; color: #fff; padding: 15px 30px; border-radius: 6px; text-decoration: none; margin: 10px; }
+    .terminal { background: #000; border-radius: 10px; padding: 20px; margin: 30px 0; text-align: left; font-family: Monaco, monospace; font-size: 14px; line-height: 1.6; }
+    .green { color: #7ee787; }
+    .yellow { color: #d29922; }
+    .cyan { color: #79c0ff; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+    .feature { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; }
+    .feature h3 { margin-bottom: 10px; color: #79c0ff; }
+    .star { position: fixed; top: 20px; right: 20px; }
+    .star iframe { border: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔋 cli-battery</h1>
+    <p class="subtitle">A beautiful battery health monitor for your terminal</p>
+    
+    <div class="star">
+      <a href="https://github.com/zoe668668/cli-battery" class="github-button" data-icon="octicon-star" data-show-count="true" aria-label="Star zoe668668/cli-battery on GitHub">Star</a>
+    </div>
+    
+    <a href="https://github.com/zoe668668/cli-battery" class="btn">View on GitHub</a>
+    <a href="https://github.com/zoe668668/cli-battery/releases" class="btn">Download</a>
+    
+    <div class="terminal">
+      <span class="cyan">┌─────────────────────────────────────────────────────────┐</span><br>
+      <span class="cyan">│</span>  <span class="cyan">🔋 Battery Status</span>                              <span class="cyan">│</span><br>
+      <span class="cyan">├─────────────────────────────────────────────────────────┤</span><br>
+      <span class="cyan">│</span>  Charge      <span class="green">████████████████████░░░░░░░░░░</span>  <span class="green">78%</span>        <span class="cyan">│</span><br>
+      <span class="cyan">│</span>  Health      <span class="green">████████████████████████████░░</span>  <span class="green">94%</span>        <span class="cyan">│</span><br>
+      <span class="cyan">│</span>  Cycles      <span class="yellow">████████░░░░░░░░░░░░░░░░░░░░░</span>  <span class="yellow">287/1000</span> <span class="cyan">│</span><br>
+      <span class="cyan">│</span>  Temp        <span class="green">32.5°C</span>                                      <span class="cyan">│</span><br>
+      <span class="cyan">├─────────────────────────────────────────────────────────┤</span><br>
+      <span class="cyan">│</span>  ⏱️  Time to Full: 1h 23m                         <span class="cyan">│</span><br>
+      <span class="cyan">│</span>  📅 Estimated Life: ~4.2 years remaining          <span class="cyan">│</span><br>
+      <span class="cyan">└─────────────────────────────────────────────────────────┘</span>
+    </div>
+    
+    <div class="features">
+      <div class="feature"><h3>📊 Health Score</h3><p>Visual health percentage with color coding</p></div>
+      <div class="feature"><h3>🔄 Cycle Tracking</h3><p>Track charge cycles vs design limit</p></div>
+      <div class="feature"><h3>🌡️ Temperature</h3><p>Real-time battery temperature</p></div>
+      <div class="feature"><h3>⏱️ Time Estimates</h3><p>Time to full charge / remaining</p></div>
+      <div class="feature"><h3>🖥️ Cross-Platform</h3><p>macOS & Linux support</p></div>
+      <div class="feature"><h3>⚡ Zero Dependencies</h3><p>Single binary, no runtime required</p></div>
+    </div>
+    
+    <div class="install">
+      <h2>📦 Installation</h2>
+      <h3 style="margin-top:15px;">macOS</h3>
+      <code>curl -sSL https://github.com/zoe668668/cli-battery/releases/latest/download/cli-battery-darwin-arm64 -o cli-battery && chmod +x cli-battery && ./cli-battery</code>
+      
+      <h3 style="margin-top:15px;">Linux</h3>
+      <code>curl -sSL https://github.com/zoe668668/cli-battery/releases/latest/download/cli-battery-linux-amd64 -o cli-battery && chmod +x cli-battery && ./cli-battery</code>
+    </div>
+    
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </div>
+</body>
+</html>
